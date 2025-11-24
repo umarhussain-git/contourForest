@@ -1,6 +1,5 @@
-# contourForest",
-"",
-"This is my contour-enhanced forest plot package. It provides functions to create **contour-enhanced forest plots** for meta-analysis of **continuous** and **binary** outcomes. The package works with `metafor` and `ggplot2` and allows customization of colors, labels, and prediction intervals.",
+# contourForest
+This is my contour-enhanced forest plot package. It provides functions to create **contour-enhanced forest plots** for meta-analysis of **continuous** and **binary** outcomes. The package works with `metafor` and `ggplot2` and allows customization of colors, labels, and prediction intervals.",
 "",
 "---",
 "",

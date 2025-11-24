@@ -15,7 +15,6 @@ Imports:
     ggplot2,
     dplyr,
     metafor,
-    flextable,
     stats
 Depends: 
     R (>= 4.0.0)

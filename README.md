@@ -36,6 +36,7 @@ forest.binary(dat, measure = "OR")
 
 ### Generate a binary contour-enhanced forest plot with subgroup
 forest.binary.subgroup(
+
   dat,
   subgroup = NULL,
   measure = "RR",

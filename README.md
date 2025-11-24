@@ -10,7 +10,7 @@ This package is designed to make forest plots more informative, interpretable, a
 
 ## Installation
 
-#` Install 'remotes' if not already installed
+ Install 'remotes' if not already installed
 
 #` install.packages("remotes")
 

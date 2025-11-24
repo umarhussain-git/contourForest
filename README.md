@@ -9,16 +9,16 @@ Prediction and confidence intervals
 This package is designed to make forest plots more informative, interpretable, and visually appealing for publications and presentations.
 
 # Installation
-## Install 'remotes' if not already installed
-## install.packages("remotes")
+#` Install 'remotes' if not already installed
+#` install.packages("remotes")
 
 remotes::install_github("umarhussain-git/contourForest")
 
 # Usage Example
-## Load the package
+#` Load the package
 library(contourForest)
 
-# --------------------------------
+#` --------------------------------
 library(contourForest)
 
 # Load included example dataset

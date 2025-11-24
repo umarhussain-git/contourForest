@@ -61,15 +61,8 @@ forest.binary.subgroup(
 data(dat1)
 
 ### Preview data
-> head(dat1)
-    Study mean_c sd_c n_c mean_t sd_t n_t
-1 Study A    5.2  1.8  50    7.4  2.0  50
-2 Study B    4.8  2.0  60    5.9  1.9  60
-3 Study C    6.1  2.1  45    8.0  2.2  45
-4 Study D    5.5  1.9  55    3.8  2.1  55
-5 Study E    4.9  2.2  50    4.2  2.0  50
-6 Study F    5.8  1.7  40    8.1  2.3  40
-
+ head(dat1)
+   
 ### Generate a continuous contour-enhanced forest plot
 forest.continuous(dat1, measure = "SMD")
 

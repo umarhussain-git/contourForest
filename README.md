@@ -3,7 +3,7 @@ This is my contour-enhanced forest plot package. It provides functions to create
 "",
 "---",
 "",
-"## Installation",
+## Installation
 "",
 "```r",
 "# install remotes if not already installed",
@@ -11,9 +11,7 @@ This is my contour-enhanced forest plot package. It provides functions to create
 "",
 "remotes::install_github('umarhussain-git/contourForest')",
 "```",
-"",
-"---",
-"",
+
 # Load the package
 library(contourForest)
 
@@ -28,7 +26,18 @@ data(dat)
 head(dat)
 
 # Generate binary forest plot with subgroups
-forest.binary.subgroup(dat, measure = "OR")
+forest.binary.subgroup((dat = dat, 
+                       diamond.col="red",
+                       overall.col="darkgreen",
+                       Pred.Inter.col = "black", 
+                       pred = TRUE, 
+                       study.col="blue",
+                       CI.col="blue", 
+                       xpos=list(EventsT=-0.9, EventsC=-0.4, Effect=2.6, Weight=3.1),
+                       study_x=-1.3,
+                       val_x=2.6,
+                       xlim=c(-1.2,3.4),
+                       Pred.Int.size = 2.5)
 
 # -------------------------
 # Example 2: Continuous outcomes

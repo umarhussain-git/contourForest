@@ -1,10 +1,7 @@
 # contourForest
-This is my contour-enhanced forest plot package. It provides functions to create **contour-enhanced forest plots** for meta-analysis of **continuous** and **binary** outcomes. The package works with `metafor` and `ggplot2` and allows customization of colors, labels, and prediction intervals.",
-"",
-"---",
-"",
-## Installation
-"",
+This is my contour-enhanced forest plot package. It provides functions to create **contour-enhanced forest plots** for meta-analysis of **continuous** and **binary** outcomes. The package works with `metafor` and `ggplot2` and allows customization of colors, labels, and prediction intervals.
+
+# Installation
 "```r",
 "# install remotes if not already installed",
 "# install.packages('remotes')",
@@ -40,16 +37,16 @@ forest.binary.subgroup((dat = dat,
                        Pred.Int.size = 2.5)
 
 # -------------------------
-# Example 2: Continuous outcomes
+## Example 2: Continuous outcomes
 # -------------------------
 
-# Load example dataset included in package
+## Load example dataset included in package
 data(dat1)
 
-# View the first rows
+## View the first rows
 head(dat1)
 
-# Generate continuous forest plot
+## Generate continuous forest plot
 forest.continuous(dat1, measure = "SMD")
 
 

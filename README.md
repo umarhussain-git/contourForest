@@ -2,12 +2,9 @@
 This is my contour-enhanced forest plot package. It provides functions to create **contour-enhanced forest plots** for meta-analysis of **continuous** and **binary** outcomes. The package works with `metafor` and `ggplot2` and allows customization of colors, labels, and prediction intervals.
 
 # Installation
-"```r",
-"# install remotes if not already installed",
-"# install.packages('remotes')",
-"",
-"remotes::install_github('umarhussain-git/contourForest')",
-"```",
+#' install remotes if not already installed
+#' install.packages('remotes')
+remotes::install_github('umarhussain-git/contourForest')
 
 # Load the package
 library(contourForest)

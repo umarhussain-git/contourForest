@@ -2,10 +2,11 @@
 % Please edit documentation in R/forest_subgroup_binary.R
 \name{forest.binary.subgroup}
 \alias{forest.binary.subgroup}
-\title{Subgroup Forest Plot for Binary Outcomes}
+\title{Contour-Enhanced Forest Plot for Binary Outcomes}
 \usage{
 forest.binary.subgroup(
   dat,
+  subgroup = NULL,
   measure = "RR",
   method = "REML",
   xlab = "Risk Ratio (RR)",
@@ -26,51 +27,52 @@ forest.binary.subgroup(
 )
 }
 \arguments{
-\item{dat}{A data frame containing study-level data with columns:
-\code{Study} (study names), \code{events_t} (events in treatment group),
-\code{n_t} (sample size in treatment group), \code{events_c} (events in control group),
-\code{n_c} (sample size in control group), and \code{subgroup} (subgroup name for each study).}
+\item{dat}{A data frame containing the study-level data including events, sample sizes, and study labels.}
 
-\item{measure}{Character; effect size measure, e.g., \code{"RR"} for risk ratio or \code{"OR"} for odds ratio.}
+\item{subgroup}{Optional character vector specifying the subgroup for each study.}
 
-\item{method}{Character; meta-analysis method, e.g., \code{"REML"} (default).}
+\item{measure}{Character specifying the effect size measure (e.g., "RR", "OR").}
 
-\item{xlab}{Character; label for the x-axis.}
+\item{method}{Method for meta-analysis (e.g., "REML", "DL").}
 
-\item{title}{Character; main plot title.}
+\item{xlab}{Label for the x-axis.}
 
-\item{diamond.col}{Color for subgroup diamonds.}
+\item{title}{Main title of the forest plot.}
 
-\item{overall.col}{Color for the overall effect diamond.}
+\item{diamond.col}{Color for the overall effect diamond.}
 
-\item{study.col}{Color for study points.}
+\item{overall.col}{Color for the overall effect line.}
 
-\item{CI.col}{Color for confidence intervals of individual studies.}
+\item{study.col}{Color for study labels.}
 
-\item{Pred.Inter.col}{Color for the prediction interval line.}
+\item{CI.col}{Color for confidence intervals.}
 
-\item{square.size}{Numeric; maximum size of the study squares.}
+\item{Pred.Inter.col}{Color for prediction intervals (if displayed).}
 
-\item{Pred.Int.size}{Numeric; thickness of the prediction interval line.}
+\item{square.size}{Size of the squares representing individual study weights.}
 
-\item{xlim}{Numeric vector of length 2; limits of the x-axis.}
+\item{Pred.Int.size}{Line width of prediction interval.}
 
-\item{text_size}{Numeric; base text size for labels.}
+\item{xlim}{Numeric vector of length 2 specifying the x-axis limits.}
 
-\item{xpos}{Named list; x positions for columns \code{EventsT}, \code{EventsC}, \code{Effect}, and \code{Weight}.}
+\item{text_size}{Font size for text annotations.}
 
-\item{study_x}{Numeric; x position for study names and subgroup labels.}
+\item{xpos}{Numeric vector specifying x positions for annotations.}
 
-\item{val_x}{Numeric; x position for subgroup effect size labels.}
+\item{study_x}{Numeric value for the x-position of study labels.}
 
-\item{pred}{Logical; whether to display the prediction interval.}
+\item{val_x}{Numeric value for the x-position of effect estimates.}
+
+\item{pred}{Logical; if TRUE, prediction intervals are displayed.}
 }
 \value{
-A \code{ggplot2} object representing the subgroup forest plot.
+A \code{ggplot} object representing the contour-enhanced forest plot.
 }
 \description{
 Creates a contour-enhanced forest plot for binary outcomes (e.g., risk ratios or odds ratios)
 with subgroup-specific meta-analyses, overall effect, heterogeneity statistics, and optional
 prediction intervals.
-@import ggplot2
+}
+\examples{
+forest.binary.subgroup(dat)
 }

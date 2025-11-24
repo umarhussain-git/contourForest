@@ -1,38 +1,37 @@
-#' Subgroup Forest Plot for Binary Outcomes
+#' Contour-Enhanced Forest Plot for Binary Outcomes
 #'
 #' Creates a contour-enhanced forest plot for binary outcomes (e.g., risk ratios or odds ratios)
 #' with subgroup-specific meta-analyses, overall effect, heterogeneity statistics, and optional
 #' prediction intervals.
-#'  @import ggplot2
-#' @importFrom dplyr %>% mutate arrange group_by summarise left_join
-#' @importFrom stats qt predict confint
-#' @importFrom metafor rma escalc
 #'
-#' @param dat A data frame containing study-level data with columns:
-#'   \code{Study} (study names), \code{events_t} (events in treatment group),
-#'   \code{n_t} (sample size in treatment group), \code{events_c} (events in control group),
-#'   \code{n_c} (sample size in control group), and \code{subgroup} (subgroup name for each study).
-#' @param measure Character; effect size measure, e.g., \code{"RR"} for risk ratio or \code{"OR"} for odds ratio.
-#' @param method Character; meta-analysis method, e.g., \code{"REML"} (default).
-#' @param xlab Character; label for the x-axis.
-#' @param title Character; main plot title.
-#' @param diamond.col Color for subgroup diamonds.
-#' @param overall.col Color for the overall effect diamond.
-#' @param study.col Color for study points.
-#' @param CI.col Color for confidence intervals of individual studies.
-#' @param Pred.Inter.col Color for the prediction interval line.
-#' @param square.size Numeric; maximum size of the study squares.
-#' @param Pred.Int.size Numeric; thickness of the prediction interval line.
-#' @param xlim Numeric vector of length 2; limits of the x-axis.
-#' @param text_size Numeric; base text size for labels.
-#' @param xpos Named list; x positions for columns \code{EventsT}, \code{EventsC}, \code{Effect}, and \code{Weight}.
-#' @param study_x Numeric; x position for study names and subgroup labels.
-#' @param val_x Numeric; x position for subgroup effect size labels.
-#' @param pred Logical; whether to display the prediction interval.
+#' @param dat A data frame containing the study-level data including events, sample sizes, and study labels.
+#' @param subgroup Optional character vector specifying the subgroup for each study.
+#' @param measure Character specifying the effect size measure (e.g., "RR", "OR").
+#' @param method Method for meta-analysis (e.g., "REML", "DL").
+#' @param xlab Label for the x-axis.
+#' @param title Main title of the forest plot.
+#' @param diamond.col Color for the overall effect diamond.
+#' @param overall.col Color for the overall effect line.
+#' @param study.col Color for study labels.
+#' @param CI.col Color for confidence intervals.
+#' @param Pred.Inter.col Color for prediction intervals (if displayed).
+#' @param square.size Size of the squares representing individual study weights.
+#' @param Pred.Int.size Line width of prediction interval.
+#' @param xlim Numeric vector of length 2 specifying the x-axis limits.
+#' @param text_size Font size for text annotations.
+#' @param xpos Numeric vector specifying x positions for annotations.
+#' @param study_x Numeric value for the x-position of study labels.
+#' @param val_x Numeric value for the x-position of effect estimates.
+#' @param pred Logical; if TRUE, prediction intervals are displayed.
+#' @importFrom dplyr group_modify mutate arrange summarise left_join
+#' @import dplyr
 #'
-#' @return A \code{ggplot2} object representing the subgroup forest plot.
+#' @return A `ggplot` object representing the contour-enhanced forest plot.
 #' @export
+#'
+#' @examples forest.binary.subgroup(dat)
 forest.binary.subgroup <- function(dat,
+                                   subgroup = NULL,
                                    measure = "RR",
                                    method = "REML",
                                    xlab = "Risk Ratio (RR)",
@@ -69,12 +68,15 @@ forest.binary.subgroup <- function(dat,
   # ---- Subgroup meta-analysis ----
   sub_results <- dat %>%
     group_by(subgroup) %>%
-    do({
-      m <- rma(ai=events_t, n1i=n_t, ci=events_c, n2i=n_c, data=., measure=measure, method=method)
+    group_modify(~{
+      m <- rma(ai=.x$events_t, n1i=.x$n_t,
+               ci=.x$events_c, n2i=.x$n_c,
+               data=.x, measure=measure, method=method)
       tau_ci <- confint(m, parm="tau2")$random
       I2.se <- sqrt(2/(m$k - 1)) * 100
-      data.frame(
-        subgroup = unique(.$subgroup),
+
+      tibble(
+        subgroup = unique(.x$subgroup),
         yi = round(m$b,2),
         ci.lb = round(m$ci.lb,2),
         ci.ub = round(m$ci.ub,2),

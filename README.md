@@ -1,5 +1,5 @@
 ## contourForest
-contourForest is an R package for creating contour-enhanced forest plots for meta-analysis of both continuous and binary outcomes.
+*contourForest* is an R package for creating contour-enhanced forest plots for meta-analysis of both continuous and binary outcomes.
 It integrates seamlessly with metafor and ggplot2, offering flexible customization for:
 Significance contours
 Effect size labels

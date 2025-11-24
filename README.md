@@ -25,7 +25,7 @@ library(contourForest)
 
 library(contourForest)
 
-# Load included example dataset
+### Load included example dataset
 data(dat)
 
 ### Preview data

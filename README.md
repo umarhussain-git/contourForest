@@ -50,7 +50,7 @@ forest.binary.subgroup(
   Pred.Inter.col = "black",
   square.size = 8,
   Pred.Int.size = 2,
-  xlim = c(2,4),
+  xlim = c(-2,4),
   text_size = 3.5,
   xpos = list(EventsT = -1.4, EventsC = -0.9, Effect = 2.5, Weight = 3.2),
   study_x = -1.8,

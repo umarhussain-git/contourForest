@@ -40,10 +40,10 @@ forest_subgroup_binary(dat)
 ### Load included example dataset
 data(dat1)
 
-# Preview data
+### Preview data
 head(dat1)
 
-# Generate a continuous contour-enhanced forest plot
+### Generate a continuous contour-enhanced forest plot
 forest.continuous(dat1, measure = "SMD")
 
 # --------------------------------

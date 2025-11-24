@@ -19,6 +19,28 @@ remotes::install_github("umarhussain-git/contourForest")
 library(contourForest)
 
 # --------------------------------
-# Example usage with metafor model
+library(contourForest)
+
+# Load included example dataset
+data(dat)
+
+# Preview data
+head(dat)
+
+# Generate a binary contour-enhanced forest plot
+forest.binary(dat, measure = "OR")
+
+# Generate a binary contour-enhanced forest plot with subgroup
+forest_subgroup_binary(dat)
+
+# Load included example dataset
+data(dat1)
+
+# Preview data
+head(dat1)
+
+# Generate a continuous contour-enhanced forest plot
+forest.continuous(dat1, measure = "SMD")
+
 # --------------------------------
 

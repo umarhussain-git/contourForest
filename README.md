@@ -110,6 +110,9 @@ forest.continuous.subgroup() – Forest plot for continuous outcomes with subgro
 ## Umar Hussain
 
 drumarhussain@gmail.com
+
+Assistant professor, Orthodontics
+
 Saidu college of Dentistry
 
 

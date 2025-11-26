@@ -45,27 +45,30 @@ data(dat1)
 
 #' View first rows
 head(dat1)
-# Example 2: Continuous Outcomes
+### Example 2: Continuous Outcomes
 #' Generate a continuous forest plot (Standardized Mean Difference)
 forest.continuous(dat1, measure = 'SMD')
 
-# Example 3: Binary Outcomes with Subgroups
+### Example 3: Binary Outcomes with Subgroups
 library(contourForest)
 
 #, Generate a binary forest plot with subgroups
 forest.binary.subgroup(dat, measure = 'OR', subgroup_col = 'group')
 
-#Example 4: Continuous Outcomes with Subgroups
+### Example 4: Continuous Outcomes with Subgroups
 library(contourForest)
 
 #` Generate a continuous forest plot with subgroups
 forest.continuous.subgroup(dat1, m_t_col = "mean_t", sd_t_col = "sd_t",
+
                            n_t_col = "n_t", m_c_col = "mean_c", sd_c_col = "sd_c",
+                           
                            n_c_col = "n_c", subgroup_col = "group",
+                           
                            study_col = "Study", measure = "SMD")
 
 
-# Features
+## Features
 
 Contour-enhanced visualization to highlight statistical significance
 
@@ -77,5 +80,10 @@ Customizable colors, labels, and annotation positions
 
 Subgroup analysis with pooled effects
 forest.continuous() – Forest plot for continuous outcomes
+# Maintainer 
+## Umar Hussain
+
+drumarhussain@gmail.com
+Saidu college of Dentistry
 
 forest.continuous.subgroup() – Forest plot for continuous outcomes with subgroups

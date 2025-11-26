@@ -21,5 +21,6 @@ dat1 <- data.frame(
   n_c     = c(50, 60, 45, 55, 50, 40),
   mean_t  = c(7.4, 5.9, 8.0, 3.8, 4.2, 8.1),  # Low SES (treatment)
   sd_t    = c(2.0, 1.9, 2.2, 2.1, 2.0, 2.3),
-  n_t     = c(50, 60, 45, 55, 50, 40)
+  n_t     = c(50, 60, 45, 55, 50, 40),
+  subgroup= c("asia", "europe","asia", "europe","asia", "europe")
 )

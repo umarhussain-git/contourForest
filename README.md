@@ -67,6 +67,7 @@ forest.binary.subgroup(dat, measure = 'OR', subgroup_col = 'group')
 library(contourForest)
 
 #` Generate a continuous forest plot with subgroups
+
 forest.continuous.subgroup(dat1, m_t_col = "mean_t", sd_t_col = "sd_t",
 
                            n_t_col = "n_t", m_c_col = "mean_c", sd_c_col = "sd_c",

@@ -87,11 +87,14 @@ Optional prediction intervals
 Customizable colors, labels, and annotation positions
 
 Subgroup analysis with pooled effects
+
 forest.continuous() – Forest plot for continuous outcomes
+
+forest.continuous.subgroup() – Forest plot for continuous outcomes with subgroups
 # Maintainer 
 ## Umar Hussain
 
 drumarhussain@gmail.com
 Saidu college of Dentistry
 
-forest.continuous.subgroup() – Forest plot for continuous outcomes with subgroups
+

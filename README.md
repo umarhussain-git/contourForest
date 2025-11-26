@@ -68,10 +68,19 @@ library(contourForest)
 
 #` Generate a continuous forest plot with subgroups
 
-forest.continuous.subgroup(dat1, m_t_col = "mean_t", sd_t_col = "sd_t", n_t_col = "n_t", 
-                           m_c_col = "mean_c", sd_c_col = "sd_c",                           
-                           n_c_col = "n_c", subgroup_col = "group",                           
-                           study_col = "Study", measure = "SMD")
+forest.continuous.subgroup(
+  dat1,
+  m_t_col     = "mean_t",
+  sd_t_col    = "sd_t",
+  n_t_col     = "n_t",
+  m_c_col     = "mean_c",
+  sd_c_col    = "sd_c",
+  n_c_col     = "n_c",
+  subgroup_col = "group",
+  study_col    = "Study",
+  measure      = "SMD"
+)
+
 
 
 ## Features

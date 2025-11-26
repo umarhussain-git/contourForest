@@ -68,6 +68,7 @@ library(contourForest)
 
 #` Generate a continuous forest plot with subgroups
 
+```r
 forest.continuous.subgroup(
   dat1,
   m_t_col     = "mean_t",
@@ -80,6 +81,7 @@ forest.continuous.subgroup(
   study_col    = "Study",
   measure      = "SMD"
 )
+```
 
 
 

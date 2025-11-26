@@ -36,18 +36,22 @@ library(contourForest)
 data(dat)
 
 #' View first rows
+
 head(dat)
 
 #' Generate a binary forest plot (Odds Ratio)
+
 forest.binary(dat, measure = 'OR')
 
 
 library(contourForest)
 
 #' Load example dataset
+
 data(dat1)
 
 #' View first rows
+
 head(dat1)
 ### Example 2: Continuous Outcomes
 #' Generate a continuous forest plot (Standardized Mean Difference)

@@ -41,8 +41,10 @@ head(dat)
 
 #' Generate a binary forest plot (Odds Ratio)
 
-forest.binary(dat, measure = 'OR')
+```r
 
+forest.binary(dat, measure = 'OR')
+```
 
 library(contourForest)
 
@@ -55,13 +57,17 @@ data(dat1)
 head(dat1)
 ### Example 2: Continuous Outcomes
 #' Generate a continuous forest plot (Standardized Mean Difference)
+```r
 forest.continuous(dat1, measure = 'SMD')
+```
 
 ### Example 3: Binary Outcomes with Subgroups
 library(contourForest)
 
 #, Generate a binary forest plot with subgroups
+```r
 forest.binary.subgroup(dat, measure = 'OR', subgroup_col = 'group')
+```
 
 ### Example 4: Continuous Outcomes with Subgroups
 library(contourForest)

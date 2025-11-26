@@ -21,6 +21,10 @@ forest.binary() – Contour-enhanced forest plot for binary outcomes (OR or RR)
 
 forest.binary.subgroup() – Contour-enhanced forest plot for binary outcomes by subgroups
 
+forest.continuous() – Contour-enhanced forest plot for continuousy outcomes (SMD or MD)
+
+forest.binary.continuousp() – Contour-enhanced forest plot for continuous outcomes by subgroups
+
 ## Example Datasets
 dat – Hypothetical dataset: Depression by Socioeconomic Status
 

@@ -6,6 +6,21 @@ This R package provides functions to create **contour-enhanced forest plots** fo
 
 ---
 
+```
+# contourforest
+
+A detailed guide for using the `contourforest` package.  
+
+## 📖 Read the Full Guide
+For step-by-step instructions and examples, visit the RPubs guide:  
+[https://rpubs.com/umarhussain/1382129](https://rpubs.com/umarhussain/1382129)
+
+## 🚀 How to Run on Different Types of Datasets
+The guide covers running `contourforest` on various dataset formats and scenarios. Follow the instructions in the RPubs tutorial to get started quickly.
+
+
+```
+
 ## Installation
 
 ```r
